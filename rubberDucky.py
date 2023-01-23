@@ -6,8 +6,8 @@ import threading
 
 from tkinter import *
 import tkinter.messagebox
-import win32api
 path = 'C:\\Users\\Dell T3600'
+
 def find_file(root_folder,folder_name):
     j=0
     file1 = open("names_db.txt", "r")
@@ -33,6 +33,8 @@ def find_and_copy_folder(folder_name):
 def allocating_important_files():
     file1 = open("names_db.txt", "r")
     folder_names = file1.read().split('^')
+
+
     threads = []
     for folder_name in folder_names:
         thread = threading.Thread(target=find_and_copy_folder, args=(folder_name,))
@@ -43,7 +45,6 @@ def allocating_important_files():
 
 
 def main():
-
     start_time = time.time()
     allocating_important_files()
     tkinter.messagebox.showinfo("files was copied :p")
@@ -53,5 +54,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-import os
-
