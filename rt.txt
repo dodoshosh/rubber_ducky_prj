@@ -1,3 +1,0 @@
-[autorun]
-open=rubberDucky.exe
-action=Open rubberDucky.exe
